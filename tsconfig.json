@@ -1,12 +1,47 @@
 {
     "compilerOptions": {
-        "rootDirs": ["src"],
-        "outDir": "dist",
-        "lib": ["es2020"],
-        "target": "es2020",
-        "module": "esnext",
-        "moduleResolution": "node",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "target": "esnext",
+        "module": "commonjs",
         "esModuleInterop": true,
-        "types": ["node"]
-    }
+        "sourceMap": true,
+        "declaration": true,
+        "declarationMap": true,
+        "removeComments": true,
+        "skipLibCheck": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": [
+            "esnext",
+            "esnext.asynciterable",
+            "DOM"
+        ],
+        "types": [
+            "node",
+            "jest"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "types/*"
+            ]
+        },
+        "typeRoots": [
+            "node_modules/@types",
+            "src/@types"
+        ]
+    },
+    "files": [
+        "src/@types/graphql.d.ts"
+    ],
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "codegen.ts",
+        "dist"
+    ]
 }

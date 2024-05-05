@@ -1,0 +1,32 @@
+"Catalog information for a single artist."
+type Artist {
+    "The ID for the artist"
+    id: ID!
+    "The artist's name"
+    name: String!
+    "The year (YYYY format) the artist was born"
+    birthYear: Int
+    "The particular record label the artist is signed with"
+    signedTo: RecordLabel
+}
+
+type RecordLabel {
+    id: ID!
+    name: String!
+    yearFounded: Int
+}
+
+"A curated collection of tracks designed for a specific activity or mood."
+type Playlist {
+    "The ID for the playlist."
+    id: ID!
+    "The name of the playlist."
+    name: String!
+    "Describes the playlist, what to expect and entices the user to listen."
+    description: String
+}
+
+type Query {
+    "Playlists hand-picked to be featured to all users."
+    featuredPlaylists: [Playlist!]!
+}
